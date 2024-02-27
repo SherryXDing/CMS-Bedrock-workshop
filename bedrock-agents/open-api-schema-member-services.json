@@ -1,0 +1,270 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Member services APIs",
+    "version": "1.0.0",
+    "description": "Member services APIs for finding services, looking up application statues, getting coverage details"
+  },
+  "paths": {
+    "/find-care-providers/hospital/{location}": {
+      "get": {
+        "summary": "Find hospitals near by",
+        "description": "Find and return hospitals near by based on location",
+        "operationId": "findHospitals",
+        "parameters": [
+          {
+            "name": "location",
+            "in": "path",
+            "description": "location",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns care providers based on request type",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "providerType": {
+                        "type": "string",
+                        "description": "This is the kind of provider like clinician, hospital etc"
+                      },
+                      "providerName": {
+                        "type": "string",
+                        "description": "This is the name of the provider"
+                      },
+                      "address": {
+                        "type": "string",
+                        "description": "This is the adress of the provider"
+                      },
+                      "servicesProvided": {
+                        "type": "array",
+                        "description": "This is the type of services provided for example telehealth",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "providerRatings": {
+                        "type": "number",
+                        "description": "This is the public rating for the provider"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/find-care-providers/physician/{location}": {
+      "get": {
+        "summary": "Find physicians near by",
+        "description": "Find and return  physicians near by based on location",
+        "operationId": "findPhysicians",
+        "parameters": [
+          {
+            "name": "location",
+            "in": "path",
+            "description": "location",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns care providers based on request type",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "providerType": {
+                        "type": "string",
+                        "description": "This is the kind of provider like clinician, hospital etc"
+                      },
+                      "providerName": {
+                        "type": "string",
+                        "description": "This is the name of the provider"
+                      },
+                      "address": {
+                        "type": "string",
+                        "description": "This is the adress of the provider"
+                      },
+                      "servicesProvided": {
+                        "type": "array",
+                        "description": "This is the type of services provided for example telehealth",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "providerRatings": {
+                        "type": "number",
+                        "description": "This is the public rating for the provider"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/beneficiaries/application-status/{beneficiaryID}": {
+      "get": {
+        "summary": "Get application status for medicare coverage request",
+        "description": "Based on provided beneficiary ID, return application status for medicare coverage",
+        "operationId": "getAppilcaitonStatus",
+        "parameters": [
+          {
+            "name": "beneficiaryID",
+            "in": "path",
+            "description": "beneficiary ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get application status for the beneficiary",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "beneficiaryId": {
+                        "type": "integer",
+                        "description": "This is the beneficiary ID"
+                      },
+                      "beneficiaryName": {
+                        "type": "string",
+                        "description": "This is the Pet Name"
+                      },
+                      "applicationNumber": {
+                        "type": "string",
+                        "description": "This is the application number"
+                      },
+                      "applicationType": {
+                        "type": "string",
+                        "description": "This is the type of application like Initial enrollment"
+                      },
+                      "status": {
+                        "type": "string",
+                        "description": "This is the status of the application"
+                      },
+                      "dateSubmitted": {
+                        "type": "string",
+                        "description": "This is the date application was submitted"
+                      },
+                      "additionalInfo": {
+                        "type": "string",
+                        "description": "This is any additional information"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/beneficiaries/coverage-summary/{beneficiaryID}": {
+      "get": {
+        "summary": "Get coverage summary for the beneficiary",
+        "description": "Based on provided beneficiary ID, get their medicare coverage summary",
+        "operationId": "getCoverageSummary",
+        "parameters": [
+          {
+            "name": "beneficiaryID",
+            "in": "path",
+            "description": "beneficiary ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get beneficiary coverage summary",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "beneficiaryID": {
+                        "type": "integer",
+                        "description": "This is the beneficiary ID"
+                      },
+                      "beneficiaryName": {
+                        "type": "string",
+                        "description": "This is the beneficiary Name"
+                      },
+                      "age": {
+                        "type": "number",
+                        "description": "This is the Pet Type"
+                      },
+                      "coverageType": {
+                        "type": "string",
+                        "description": "This is the Pet Color"
+                      },
+                      "parts": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "partADeductible": {
+                        "type": "number",
+                        "description": "This is the deductible for part A"
+                      },
+                      "partBDeductible": {
+                        "type": "number",
+                        "description": "This is the deductible for part B"
+                      },
+                      "partCDeductible": {
+                        "type": "number",
+                        "description": "This is the deductible for part C"
+                      },
+                      "partDDeductible": {
+                        "type": "number",
+                        "description": "This is the deductible for part D"
+                      },
+                      "prescriptionsCovered": {
+                        "type": "boolean",
+                        "description": "True if prescription is covered false otherwise"
+                      },
+                      "supplementalInsurance": {
+                        "type": "boolean",
+                        "description": "True if supplemental insurance is covered false otherwise"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
