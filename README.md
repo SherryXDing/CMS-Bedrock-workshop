@@ -1,5 +1,34 @@
 This GitHub repo provides a customization of Amazon Bedrock workshop for HCLS and/or Pubic Sector customers.
 ## Setup Instructions
+## Login to AWS console
+This workshop creates an AWS account. You will need the AWS Account Login URL provided by the workshop facilitators.
+### STEPS
+1. Connect to the workshop by browsing tohttps://catalog.us-east-1.prod.workshops.aws/join?access-code=<ReplacewithAccessCode> 
+The following screen shows up where you will need to specify the event access code. 
+![Alt text](read-me-images/agent/agent_access1.png)
+
+
+2. Click Next.
+
+3. Click on Email One-Time Password (OTP).
+
+4. Enter Email (company email address) and click Send passcode.
+
+![Alt text](read-me-images/agent/access2.png)
+
+5. It may take a few minutes to receive your passcode through your email. Enter the passcode and click Sign in.
+
+![Alt text](read-me-images/agent/access3.png)
+
+6.  This should redirect you to the Terms and Conditions. Click on the box to agree and Click Join event.
+![Alt text](read-me-images/agent/access4.png)
+
+7. This will take you to the workshop instructions page. On the bottom right corner of this screen click on Open AWS Console. This will open AWS Console in a new browser tab.
+![](read-me-images/agent/agent_image22.png)
+
+8. At the end of this workshop, if you are using your own AWS account, clean up your resources so you don't get charged.
+
+
 ### SageMaker Studio Setup
 
 1. From the AWS Console, Search for **SageMaker** in the Services text box and select **Amazon SageMaker** from the search results
@@ -87,8 +116,13 @@ This GitHub repo provides a customization of Amazon Bedrock workshop for HCLS an
 
 
 
+
+
+
+
 # Building generative AI applications with Amazon Bedrock using agents
 ## Overview 
+
 This workshop details the setup process of an application that will use an agent on Amazon Bedrock. This will include setting up S3 buckets, a knowledge base, action group, Lambda function.
     
 The agent is designed to answer general questions on Medicare plans, eligibility, coverage details, application status.
@@ -144,33 +178,6 @@ The AWS Services that are used in this workshop are:
 
 **The Invitation:** Intrigued by the success? Join our workshop to learn how you can leverage AWS Bedrock to build AI virtual agents! Help us improve Ava even more! 
 
-## Login to AWS console
-This workshop creates an AWS account. You will need the AWS Account Login URL provided by the workshop facilitators.
-### STEPS
-1. Connect to the workshop by browsing tohttps://catalog.us-east-1.prod.workshops.aws/join?access-code=<ReplacewithAccessCode> 
-The following screen shows up where you will need to specify the event access code. 
-![Alt text](read-me-images/agent/agent_access1.png)
-
-
-2. Click Next.
-
-3. Click on Email One-Time Password (OTP).
-
-4. Enter Email (company email address) and click Send passcode.
-
-![Alt text](read-me-images/agent/access2.png)
-
-5. It may take a few minutes to receive your passcode through your email. Enter the passcode and click Sign in.
-
-![Alt text](read-me-images/agent/access3.png)
-
-6.  This should redirect you to the Terms and Conditions. Click on the box to agree and Click Join event.
-![Alt text](read-me-images/agent/access4.png)
-
-7. This will take you to the workshop instructions page. On the bottom right corner of this screen click on Open AWS Console. This will open AWS Console in a new browser tab.
-![](read-me-images/agent/agent_image22.png)
-
-8. At the end of this workshop, if you are using your own AWS account, clean up your resources so you don't get charged.
 
 ## Module 1 - Setup Amazon S3 Buckets and Knowledge base
 ### Configuaration and Setup
@@ -357,22 +364,49 @@ It's time to test!
 
 * You will see a user interface on the right where you will need to select a model. Choose the **Anthropic Claude V2 model**, then select **Apply**.
 
-![Alt text](read-me-images/agent/image-28.png)
+![Alt text](read-me-images/agent/agent-testing-image-1.png)
 
 
-* You can now enter prompts in the user interface provided.
+* You can now enter prompts in the user interface provided. Explore the source details and citations to understand the basis for the responses.
 
 
 
-* Test Prompts: 
+* Test Prompts to **Test Knowledge Base**: 
 1. When is Medicare open enrollment closing?
-2. Can you help me find doctors in Washington DC?
+2. Who is eligible for Medicare?
+3. I'm 65 year old, still working with employer provided medical insurance. What are my options with respect to Medicare enrollment?
+4. When will Medicare coverage begins in 2024?
+5. What are benefits are covered under Medicare for free of cost?
+6. Do I need to pay a premium for Medicare plans? 
 
 
-### Agent prompt
+### Test Agents
+*  You can now enter prompts in the user interface provided. Explore the trances to understand how the Agent is arriving with the responses.
 
-You are a helpful AI assistant to insurance members who can answer questions about medicare services, provide coverage summary when asked, provide application status and provide details about hospitals and doctors nearby based on < location >. You will be as helpful as possible and ask users for additional information if needed. You do not decide that you do not have enough information if you can ask the user for more input.
+![Alt text](read-me-images/agent/agent-testing-image.png)
 
-### Agent Knowledge base instruction
+* Test Prompts to **Test Agent**: 
+1. When is Medicare open enrollment closing?
+2. What is my coverage status? 
+    * Agent can ask for beneficiary id? ( Provide **2** or any input)
+3. Can you help me find doctors in Washington DC?
+3. Can you find me highest rated physician in Washington DC area?
+4. Can you find me a highly rated hospital in Washington DC?
 
-This Knowledge base has information about medicare details, coverage details, parts covered and forms.
+## THE END
+### Congratulations!! 
+### Summary
+
+Overview: In this workshop, we embarked on an exciting journey to develop a GenerativeAI application capable of providing support services to Medicare Beneficiaries. Utilizing Amazon Bedrock , we achieved a seamless integration of various AWS services, demonstrating the power of cloud computing in the realm of CMS's Medicare Program.
+
+Key Achievements:
+
+**Setting Up Amazon Bedrock Agent on AWS:** We successfully established S3 buckets for storing domain data and artifacts. A knowledge base was configured for our Bedrock agent, integrating Medicare Handbook document. We created and configured a Lambda function, "MedicareMemberServices-actions" tailored for the application's unique needs.
+
+**Building the Knowledge Base:** Participants gained hands-on experience in setting up and syncing a knowledge base with the Bedrock agent. We focused on leveraging the Anthropic: Claude V2.0 model for intelligent data interpretation.
+
+**Configuring AWS Lambda Function:** We delved into the intricacies of Python 3.12 to craft a functional Lambda setup. The workshop provided insights into resource policy application and Lambda function deployment.
+
+**Agent and Action Group Setup:** The creation of the "MyMedicareAgent" agent enabled us to define operational rules and integrate the Lambda function. We highlighted the process of creating an agent alias and implementing action groups for providing customized services for a given Medicare Beneficiary.
+
+**Impact and Takeaways:** The workshop not only equipped participants with the technical know-how but also provided a broader understanding of how agents on Amazon Bedrock can revolutionize support services for millions of Medicare Beneficiaries. This hands-on experience has laid a foundation for innovative approaches to Medicare program.
