@@ -381,9 +381,14 @@ It's time to test!
 
 
 ### Test Agents
-*  You can now enter prompts in the user interface provided. Explore the trances to understand how the Agent is arriving with the responses.
+
+* You will see a user interface on the right where you will need to select a model. Choose the **Anthropic Claude V2 model**, then select **Apply**.
+
 
 ![Alt text](read-me-images/agent/agent-testing-image.png)
+
+*  You can now enter prompts in the user interface provided. Explore the trances to understand how the Agent is arriving with the responses.
+
 
 * Test Prompts to **Test Agent**: 
 1. When is Medicare open enrollment closing?
