@@ -1,12 +1,11 @@
 This GitHub repo provides a customization of Amazon Bedrock workshop for HCLS and/or Pubic Sector customers.
-## Setup Instructions
+# Setup Instructions
 ## Login to AWS console
 This workshop creates an AWS account. You will need the AWS Account Login URL provided by the workshop facilitators.
 ### STEPS
 1. Connect to the workshop by browsing tohttps://catalog.us-east-1.prod.workshops.aws/join?access-code=<ReplacewithAccessCode> 
 The following screen shows up where you will need to specify the event access code. 
 ![Alt text](read-me-images/agent/agent_access1.png)
-
 
 2. Click Next.
 
@@ -28,8 +27,12 @@ The following screen shows up where you will need to specify the event access co
 
 8. At the end of this workshop, if you are using your own AWS account, clean up your resources so you don't get charged.
 
+    
+    
+    
 
-### SageMaker Studio Setup
+# Get familiar with Bedrock APIs
+## SageMaker Studio Setup
 
 1. From the AWS Console, Search for **SageMaker** in the Services text box and select **Amazon SageMaker** from the search results
 
@@ -91,6 +94,7 @@ The following screen shows up where you will need to specify the event access co
      boto3 Bedrock client successfully created!
      bedrock(https://bedrock.us-west-2.amazonaws.com)
 
+    
 ## Text Summarization Activity
 
 13. You have completed setting up required libraries to execute the lab. Now you can start the **text_summarization.ipynb** lab by opening the corresponding notebook and execute the code snippets.
@@ -101,7 +105,7 @@ The following screen shows up where you will need to specify the event access co
 15. Execute other code snippets and experiment with the prompts. 
 
 
-## QA in RAG with LangChain Activity
+## QA using RAG with LangChain Activity
 
 16. Open **Langchain** notebook and start executing the note book code blocks
 
@@ -111,9 +115,7 @@ The following screen shows up where you will need to specify the event access co
 
     ![Alt text](read-me-images/image-20.png)
 
-
-
-
+    
 
 
 
