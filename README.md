@@ -74,17 +74,14 @@ The following screen shows up where you will need to specify the event access co
 
     ![Alt text](read-me-images/image-12.png)
 
-11. Open the Terminal
-
-    ![Alt text](read-me-images/image-13.png)
 
 ## Boto3 setup activity (Required)
 
-12. Open bedrock_boto3_setup notebook and execute. Ignore pip's errors!
+12. Open bedrock_boto3_setup notebook and select **Data Science. 3.0** image, **Python 3** kernel, **ml.t3.medium** instance, then execute. Ignore pip's errors in execution!
 
     ![Alt text](read-me-images/image-14.png)
 
-13. Uncomment (remove #) for os.environ... in the code and set the aws region the workshop is executing in.
+13. Uncomment (remove #) for os.environ... in the code and set the aws region **us-west-2** in which the workshop is executing.
 
     ![Alt text](read-me-images/image-15.png)
 
