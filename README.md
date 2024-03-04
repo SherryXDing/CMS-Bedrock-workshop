@@ -77,11 +77,11 @@ The following screen shows up where you will need to specify the event access co
 
 ## Boto3 setup activity (Required)
 
-12. Open bedrock_boto3_setup notebook and select **Data Science. 3.0** image, **Python 3** kernel, **ml.t3.medium** instance, then execute. Ignore pip's errors in execution!
+11. Open bedrock_boto3_setup notebook and select **Data Science. 3.0** image, **Python 3** kernel, **ml.t3.medium** instance, then execute. Ignore pip's errors in execution!
 
     ![Alt text](read-me-images/image-14.png)
 
-13. Uncomment (remove #) for os.environ... in the code and set the aws region **us-west-2** in which the workshop is executing.
+12. Uncomment (remove #) for os.environ... in the code and set the aws region **us-west-2** in which the workshop is executing.
 
     ![Alt text](read-me-images/image-15.png)
 
@@ -93,21 +93,21 @@ The following screen shows up where you will need to specify the event access co
 
 ## Text Summarization Activity
 
-14. You have completed setting up required libraries to execute the lab. Now you can start the **text_summarization.ipynb** lab by opening the corresponding notebook and execute the code snippets.
+13. You have completed setting up required libraries to execute the lab. Now you can start the **text_summarization.ipynb** lab by opening the corresponding notebook and execute the code snippets.
 
-15. Make sure you uncomment the following line **os.environ** in the code snippet and set correct **AWS region**. It can be different from what you see below. 
+14. Make sure you uncomment the following line **os.environ** in the code snippet and set correct **AWS region**. It can be different from what you see below. 
     ![Alt text](read-me-images/image-16.png)
 
-16. Execute other code snippets and experiment with the prompts. 
+15. Execute other code snippets and experiment with the prompts. 
 
 
 ## LangChain Activity
 
-17. Open **Langchain** notebook and start executing the note book code blocks
+16. Open **Langchain** notebook and start executing the note book code blocks
 
     ![Alt text](read-me-images/image-17.png)
 
-18. Make sure you have set the correct aws region in the following code block. Check the region where this workshop is executing by looking at the URL in the browser and set it accordingly( us-west-2 or us-east-1).
+17. Make sure you have set the correct aws region in the following code block. Check the region where this workshop is executing by looking at the URL in the browser and set it accordingly( us-west-2 or us-east-1).
 
     ![Alt text](read-me-images/image-20.png)
 
