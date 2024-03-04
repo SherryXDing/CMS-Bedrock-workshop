@@ -101,7 +101,7 @@ The following screen shows up where you will need to specify the event access co
 15. Execute other code snippets and experiment with the prompts. 
 
 
-## LangChain Activity
+## QA in RAG with LangChain Activity
 
 16. Open **Langchain** notebook and start executing the note book code blocks
 
@@ -201,8 +201,8 @@ Domain Data Bucket: Navigate to the Amazon S3 console and create an S3 bucket. U
 
 **_Now, the team at CMS are looking optimistic! but still wondering if this is too good to be true. "I wonder if we will still have to analyze all of these documents to gather enough information to support our beneficiaries" they ask themselves.._**
 
-## Grant model access & Setup Knowledge base
-### Step 2: Grant model access and create KB
+### Grant model access & Setup Knowledge base
+#### Step 2: Grant model access and create KB
 * Before we setup the knowledge base, we will need to grant access to the models that will be needed for our agent in Bedrock. Navigate to the Amazon Bedrock console. On the left of the screen, scroll down and select **Model access**. On the right, select the orange **Manage model access** button.
 
 ![Alt text](read-me-images/agent/model_access.png)
@@ -217,7 +217,7 @@ Domain Data Bucket: Navigate to the Amazon S3 console and create an S3 bucket. U
 
 ![Alt text](read-me-images/agent/create_kb_btn.png)
 
-* You can use the default name, or enter in your own. Then, select **Next** at the bottom right of the screen.
+* You can use the default name, or enter in your own. Then, select **Next** at the bottom right of the screen. 
 ![Alt text](read-me-images/agent/kb_details.gif)
 
 * Sync S3 bucket *knowledgebase-bedrock-agent-{alias}* to this knowledge base.
@@ -231,17 +231,17 @@ Domain Data Bucket: Navigate to the Amazon S3 console and create an S3 bucket. U
 **Once your data source completes syncing you will be able to move to the next step.**
 ![Alt text](read-me-images/agent/image-6.png)
 
-**_"Wow! that was easy enough. I wonder what the catch is" the team asks themselves. With CMS team being new to Generative AI, they are wondering if they have enough skills to build this workload out._**
+_"Wow! that was easy enough. I wonder what the catch is" the team asks themselves. With CMS team being new to Generative AI, they are wondering if they have enough skills to build this workload out._
 
 
 ## Module 2 - Setup AWS Lambda function
 
-## Configuration and setup
+### Configuration and setup
 
 Now, it is time to create the Lambda function.
-## Lambda Function Configuration
+### Lambda Function Configuration
 
-### Step 3: Create an AWS Lambda function for the Action group
+#### Step 3: Create an AWS Lambda function for the Action group
 
 * Navigate to **Lambda** Service Console (Search for *Lambda* in Service Search and Select Lambda from the results ) 
 ![Alt text](read-me-images/agent/image-7.png)
@@ -249,7 +249,7 @@ Now, it is time to create the Lambda function.
 * Click on **Create function** button
 ![Alt text](read-me-images/agent/image-8.png)
 
-* Create a Lambda function (Python 3.12) for the Bedrock agent's action group. We will call this Lambda function **MedicareMemberServices-actions**. We are creating this function for an action group in order to carry out various tasks.
+* Create a Lambda function (**Python 3.12**) for the Bedrock agent's action group. We will call this Lambda function **MedicareMemberServices-actions**. We are creating this function for an action group in order to carry out various tasks.
 
 ![Alt text](read-me-images/agent/image-9.png)
 
@@ -275,13 +275,8 @@ into your Lambda function.
 
     ![Alt text](read-me-images/agent/image-13.png) 
 
-**_Now, CMS team is feeling really good that they are building out the product that they envisioned!_**
+_Now, CMS team is feeling really good that they are building out the product that they envisioned!_
 
-## Prompts for Knowledgebase
-
-### Knowledge base description
-
-This knowledgebase has information on medicare details, medicare parts infromation for medicare plans, forms etc.
 
 ## Module 3 - Setup agent and Action group
 ### Configuration and setup
@@ -306,7 +301,6 @@ We will now be configuring an agent with an Action group.
 
 ![Alt text](read-me-images/agent/image-16.png)
 
-
 * When creating the agent, select Lambda function **MedicareMemberServices-actions**. Next, select the schema file **open-api-schema-member-services.json** from the s3 bucket **s3://artifacts-bedrock-agent-creator-{alias}**. Your now done with creating the action group. Select **Next**.
 
 ![Alt text](read-me-images/agent/image-17.png)
@@ -314,7 +308,7 @@ We will now be configuring an agent with an Action group.
 
 ## Module 4 - Sync Knowledge base with an agent on Amazon Bedrock
 
-#### Configuration and Setup
+### Configuration and Setup
  Lets now sync the Knowledge base with the agent.
 
 ### Sync Knowledge base with Amazon Bedrock agent
@@ -330,7 +324,7 @@ We will now be configuring an agent with an Action group.
 
 ![Alt text](read-me-images/agent/image-19.png)
 
-**_"Hey look! we have another co-worker now. We'll call it Mr. Agent". The team joked around, while suggesting just the right instructions to provide to the agent._**
+_"Hey look! we have another co-worker now. We'll call it Mr. Agent". The team joked around, while suggesting just the right instructions to provide to the agent._
 
 ### Creating an alias
 #### Step 6: Create an alias
@@ -349,6 +343,7 @@ _arn:aws:bedrock:us-west-2:{accoundID}:agent/**BedrockAgentID**_
 
 ![Alt text](read-me-images/agent/image-25.png)
 
+    
 ## Module 5 - Testing the Setup
 It's time to test!
 
@@ -379,7 +374,7 @@ It's time to test!
 
 ### Test Agents
 
-* You will see a user interface on the right where you will need to select a model. Choose the **Anthropic Claude V2 model**, then select **Apply**.
+* You will need to select the agent alias that you created in test window.
 
 
 ![Alt text](read-me-images/agent/agent-testing-image.png)
@@ -390,10 +385,10 @@ It's time to test!
 * Test Prompts to **Test Agent**: 
 1. When is Medicare open enrollment closing?
 2. What is my coverage status? 
-    * Agent can ask for beneficiary id? ( Provide **2** or any input)
+    * Agent will ask for beneficiary id ( Provide **2** or any number)
 3. Can you help me find doctors in Washington DC?
-3. Can you find me highest rated physician in Washington DC area?
-4. Can you find me a highly rated hospital in Washington DC?
+4. Can you find me highest rated physician in Washington DC area?
+5. Can you find me a highly rated hospital in Washington DC?
 
 ## THE END
 ### Congratulations!! 
