@@ -27,7 +27,16 @@ The following screen shows up where you will need to specify the event access co
 
 8. At the end of this workshop, if you are using your own AWS account, clean up your resources so you don't get charged.
 
-    
+## Grant model access
+* Before we do hands-on labs, we will need to grant access to the models that will be needed for this workshop in Bedrock. Navigate to the Amazon Bedrock console. On the left of the screen, scroll down and select **Model access**. On the right, select the orange **Manage model access** button.
+
+![Alt text](read-me-images/agent/model_access.png)
+
+* Select the checkbox for the base model columns **Amazon: Titan Embeddings G1 - Text, Titan Text G1 - Express**, **Meta: Llama 2 Chat 13B**, and **Anthropic: Claude and Claude Instant**. This will provide you access to the required models. After, scroll down to the bottom right and select **Request model access**.
+
+* After, verify that the access status of the models is **green** with **Access granted**.
+
+![Alt text](read-me-images/agent/image-3.png)
     
     
 
@@ -203,18 +212,8 @@ Domain Data Bucket: Navigate to the Amazon S3 console and create an S3 bucket. U
 
 **_Now, the team at CMS are looking optimistic! but still wondering if this is too good to be true. "I wonder if we will still have to analyze all of these documents to gather enough information to support our beneficiaries" they ask themselves.._**
 
-### Grant model access & Setup Knowledge base
-#### Step 2: Grant model access and create KB
-* Before we setup the knowledge base, we will need to grant access to the models that will be needed for our agent in Bedrock. Navigate to the Amazon Bedrock console. On the left of the screen, scroll down and select **Model access**. On the right, select the orange **Manage model access** button.
-
-![Alt text](read-me-images/agent/model_access.png)
-
-* Select the checkbox for the base model columns **Amazon: Titan Embeddings G1 - Text** and **Anthropic: Claude and Claude Instant**. This will provide you access to the required models. After, scroll down to the bottom right and select **Request model access**.
-
-* After, verify that the access status of the models is **green** with **Access granted**.
-
-![Alt text](read-me-images/agent/image-3.png)
-
+### Setup Knowledge base
+#### Step 2: Create Knowledge base
 * Now, we will create a knowledge base by selecting **Knowledge base** on the left, then selecting the orange button **Create knowledge base**.
 
 ![Alt text](read-me-images/agent/create_kb_btn.png)
